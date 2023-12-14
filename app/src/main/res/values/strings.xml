@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AppRecyclerView</string>
+    <string name="texto">Busca el nombre de un país</string>
 </resources>
