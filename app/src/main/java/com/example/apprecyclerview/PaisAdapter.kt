@@ -1,5 +1,6 @@
 package com.example.apprecyclerview
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -29,8 +30,9 @@ class PaisAdapter(private val paises: List<PaisesResponse>) : RecyclerView.Adapt
         private val capitalTextView: TextView = itemView.findViewById(R.id.capitalTextView)
         private val populationTextView: TextView = itemView.findViewById(R.id.populationTextView)
         private val flagImageView: ImageView = itemView.findViewById(R.id.flagImageView)
+        @SuppressLint("SetTextI18n")
         fun bind(country: PaisesResponse) {
-            nameTextView.text = "Name: ${country.nombre}"
+            this.nameTextView.text = "Name: ${country.nombre}"
             capitalTextView.text = "Capital: ${country.capital}"
             populationTextView.text = "Population: ${country.poblacion}"
             Picasso.get().load(country.bandera.png).into(flagImageView)

@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity(), OnQueryTextListener{
 
     private fun searchByName(query:String){
         CoroutineScope(Dispatchers.IO).launch {
-            val llamada:Response<PaisesResponse> =getRetrofit().create(APIService::class.java).getPaisesByName("$query?fullText=true")
+            val llamada:Response<PaisesResponse> =getRetrofit().create(APIService::class.java).getPaisesByName("$query")
             val paises:PaisesResponse? =llamada.body()
             runOnUiThread{
                 if(llamada.isSuccessful){
